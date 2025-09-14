@@ -138,7 +138,7 @@ export default function ReviewsCarousel() {
               className="flex transition-transform duration-500 ease-in-out"
               style={{ transform: `translateX(-${currentIndex * 100}%)` }}
             >
-              {reviews.map((review, index) => (
+              {reviews.map((review, _index) => (
                 <div key={review.id} className="w-full flex-shrink-0 px-8">
                   <div className="bg-white text-gray-900 rounded-2xl p-8 lg:p-12 shadow-strong mx-auto max-w-3xl">
                     {/* Rating */}

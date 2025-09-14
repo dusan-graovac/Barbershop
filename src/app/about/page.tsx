@@ -39,7 +39,7 @@ export default function AboutPage() {
                     What started as a single chair operation has grown into the premier barbershop in the downtown district, known for our attention to detail, skilled craftsmen, and commitment to making every client feel like a million dollars.
                   </p>
                   <p>
-                    We believe that a great haircut is more than just a service—it's an experience that boosts confidence and reflects personal style.
+                    We believe that a great haircut is more than just a service—it&apos;s an experience that boosts confidence and reflects personal style.
                   </p>
                 </div>
               </div>

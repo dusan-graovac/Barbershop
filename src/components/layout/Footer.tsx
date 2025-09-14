@@ -6,7 +6,7 @@ interface FooterProps {
   bookingQRCode?: string;
 }
 
-export default function Footer({ bookingUrl = '#', bookingQRCode }: FooterProps) {
+export default function Footer({ bookingUrl = '#', bookingQRCode: _bookingQRCode }: FooterProps) {
   const currentYear = new Date().getFullYear();
 
   return (

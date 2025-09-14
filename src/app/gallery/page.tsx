@@ -95,7 +95,7 @@ export default function GalleryPage() {
               Ready for Your Perfect Cut?
             </h2>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Book your appointment today and experience the craftsmanship you've seen
+              Book your appointment today and experience the craftsmanship you&apos;ve seen
             </p>
             <a
               href={bookingUrl}
