@@ -86,8 +86,6 @@ jobs:
             echo "Final out directory:"
             ls -la out/
           fi
-        env:
-          GITHUB_PAGES: true
           
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

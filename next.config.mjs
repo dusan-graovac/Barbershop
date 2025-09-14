@@ -7,9 +7,6 @@ const nextConfig = {
     unoptimized: true
   },
   distDir: 'out',
-  // Add basePath and assetPrefix for GitHub Pages
-  assetPrefix: process.env.GITHUB_PAGES ? '/Barbershop' : '',
-  basePath: process.env.GITHUB_PAGES ? '/Barbershop' : '',
 };
 
 export default nextConfig;
