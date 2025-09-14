@@ -2,12 +2,14 @@
 const nextConfig = {
   output: 'export',
   trailingSlash: true,
-  skipTrailingSlashRedirect: true,
   images: {
     unoptimized: true
   },
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/Barbershop' : '',
-  basePath: process.env.NODE_ENV === 'production' ? '/Barbershop' : '',
+  // Only add basePath/assetPrefix when building for GitHub Pages
+  ...(process.env.GITHUB_PAGES && {
+    assetPrefix: '/Barbershop/',
+    basePath: '/Barbershop',
+  }),
 };
 
 export default nextConfig;
