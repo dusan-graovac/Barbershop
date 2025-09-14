@@ -39,8 +39,6 @@ jobs:
         run: |
           echo "Building with Next.js..."
           npm run build
-          echo "Build completed, checking output..."
-          ls -la
           
       - name: Verify build output
         run: |
