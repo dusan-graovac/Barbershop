@@ -28,6 +28,12 @@ jobs:
         env:
           NODE_ENV: production
 
+      - name: Create index.html from static export
+        run: |
+          if [ -f "./out/server/app/index.html" ]; then
+            cp ./out/server/app/index.html ./out/index.html
+          fi
+          
       - name: Add .nojekyll file
         run: touch ./out/.nojekyll
 
