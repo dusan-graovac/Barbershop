@@ -7,6 +7,8 @@ const nextConfig = {
     unoptimized: true
   },
   distDir: 'out',
+  basePath: '/Barbershop',
+  assetPrefix: '/Barbershop',
 };
 
 export default nextConfig;
