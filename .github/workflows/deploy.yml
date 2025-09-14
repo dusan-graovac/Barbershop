@@ -42,49 +42,19 @@ jobs:
           echo "Build completed, checking output..."
           ls -la
           
-      - name: Debug and ensure static export
+      - name: Verify build output
         run: |
-          echo "=== Debug Information ==="
-          echo "Current directory contents:"
+          echo "Build completed, checking output..."
           ls -la
-          echo ""
-          echo "Looking for build outputs:"
-          find . -maxdepth 2 -name "out" -o -name ".next" -type d
-          echo ""
-          
           if [ -d "out" ]; then
             echo "✓ Found out directory:"
-            ls -la out/ | head -10
-          else
-            echo "✗ No out directory found"
-            echo "Checking .next directory:"
-            if [ -d ".next" ]; then
-              ls -la .next/ | head -10
-              echo ""
-              echo "Checking for static files in .next:"
-              find .next -name "*.html" -o -name "static" -type d | head -5
-            fi
-            
-            echo "Creating out directory and copying files..."
-            mkdir -p out
-            
-            # Copy static assets
-            if [ -d ".next/static" ]; then
-              cp -r .next/static out/_next/
-            fi
-            
-            # Look for HTML files
-            if [ -f ".next/server/app/index.html" ]; then
-              cp .next/server/app/index.html out/index.html
-            elif [ -f ".next/server/pages/index.html" ]; then
-              cp .next/server/pages/index.html out/index.html
-            else
-              echo "No index.html found, creating basic one..."
-              echo "<!DOCTYPE html><html><head><title>Millionaire Barbershop</title></head><body><h1>Loading...</h1></body></html>" > out/index.html
-            fi
-            
-            echo "Final out directory:"
             ls -la out/
+            echo ""
+            echo "Checking for _next directory:"
+            ls -la out/_next/
+          else
+            echo "✗ No out directory found - build failed"
+            exit 1
           fi
           
       - name: Upload artifact
