@@ -68,17 +68,6 @@ export default function Footer({ bookingUrl = '#', bookingQRCode: _bookingQRCode
           <div className="space-y-4">
             <h3 className="font-display text-2xl text-primary">Book Online</h3>
             
-            {/* QR Code */}
-            <div className="bg-white p-4 rounded-lg inline-block">
-              <Image 
-                src="/images/booking-qr-code.svg"
-                alt="Book appointment QR code" 
-                width={96}
-                height={96}
-                className="w-24 h-24"
-              />
-              <p className="text-xs text-black mt-2 text-center">Scan to book</p>
-            </div>
 
             {/* Book Now Button */}
             <div>
