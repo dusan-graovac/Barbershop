@@ -118,26 +118,36 @@ export default function AcuityEmbed({ className = '' }: AcuityEmbedProps) {
     // Add service/appointment type if specified
     if (selectedService) {
       // Map service slugs to their Acuity appointment type IDs
+      // TODO: Replace these with your actual Acuity appointment type IDs
+      // To find these: Go to Acuity Admin > Appointment Types > Edit each service > Look at the URL
+      // The number in the URL (e.g. ...appointmentType/12345) is your appointment type ID
       const serviceTypes: { [key: string]: string } = {
-        'mens-haircut-beard': '84143336',    // Replace with actual appointment type ID
-        'mens-haircut': '84143228',          // Replace with actual appointment type ID
-        'womens-haircut': '84144137',        // Replace with actual appointment type ID
-        'kids-haircut-under-9': '84143789',  // Replace with actual appointment type ID
-        'beard-lineup': '84143490',          // Replace with actual appointment type ID
-        'facial': '84143844',                // Replace with actual appointment type ID
-        'full-face-threading': '84144077',   // Replace with actual appointment type ID
-        'ears-waxing': '84143895',           // Replace with actual appointment type ID
-        'eyebrows-threading': '84143956',    // Replace with actual appointment type ID
-        'mens-hair-color': '84143993',       // Replace with actual appointment type ID
-        'mens-beard-color': '84144037',      // Replace with actual appointment type ID
-        'house-call': '84144195',            // Replace with actual appointment type ID
-        'vip': '84144225'                    // Replace with actual appointment type ID
+        'mens-haircut-beard': '84143336',    // Men's Haircut & Beard
+        'mens-haircut': '84143228',          // Men's Haircut
+        'womens-haircut': '84144137',        // Women's Haircut
+        'kids-haircut-under-9': '84143789',  // Kid's Haircut (under 9)
+        'beard-lineup': '84143490',          // Beard Lineup
+        'facial': '84143844',                // Facial
+        'full-face-threading': '84144077',   // Full Face Threading
+        'ears-waxing': '84143895',           // Ears Waxing
+        'eyebrows-threading': '84143956',    // Eyebrows Threading
+        'mens-hair-color': '84143993',       // Men's Hair Color
+        'mens-beard-color': '84144037',      // Men's Beard Color
+        'house-call': '84144195',            // House Call
+        'vip': '84144225'                    // VIP
       };
 
       const serviceTypeId = serviceTypes[selectedService.toLowerCase()];
       if (serviceTypeId) {
-        url += `&appointmentType=${serviceTypeId}`;
+        // Try multiple parameter names that Acuity might recognize
+        url += `&appointmentType=${serviceTypeId}&type=${serviceTypeId}&service=${serviceTypeId}`;
       }
+    }
+
+    // Debug logging to help troubleshoot
+    if (selectedService) {
+      console.log('Selected service:', selectedService);
+      console.log('Generated booking URL:', url);
     }
 
     return url;
@@ -187,13 +197,29 @@ export default function AcuityEmbed({ className = '' }: AcuityEmbedProps) {
 
       {/* Show selected service info if applicable */}
       {selectedService && (
-        <div className="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-          <p className="text-blue-800 font-medium">
-            ✂️ Service: <span className="capitalize font-bold">{selectedService.replace(/-/g, ' ')}</span>
-          </p>
-          <p className="text-blue-600 text-sm mt-1">
-            You can still change your service selection in the booking form below.
-          </p>
+        <div className="mb-8 bg-gradient-to-r from-green-50 to-emerald-100 border-2 border-green-300 rounded-xl p-6 shadow-lg">
+          <div className="flex items-center gap-4">
+            {/* Service Icon */}
+            <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center text-white text-2xl shadow-lg">
+              ✂️
+            </div>
+
+            {/* Service Info */}
+            <div className="flex-1">
+              <div className="flex items-center gap-2 mb-2">
+                <h3 className="text-2xl font-bold text-green-800 capitalize">
+                  {selectedService.replace(/-/g, ' ')}
+                </h3>
+                <span className="bg-green-600 text-white text-xs font-semibold px-2 py-1 rounded-full">PRE-SELECTED</span>
+              </div>
+              <p className="text-green-700 font-medium">
+                🎯 This service is pre-selected for your convenience
+              </p>
+              <p className="text-green-600 text-sm mt-1">
+                You can change this selection in the booking form if needed.
+              </p>
+            </div>
+          </div>
         </div>
       )}
 
