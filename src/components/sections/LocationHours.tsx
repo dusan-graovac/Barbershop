@@ -22,6 +22,9 @@ export default function LocationHours({ bookingUrl = '#' }: LocationHoursProps) 
                 5300 S 76th St suite 1120<br />
                 Greendale, WI 53129
               </address>
+              <p className="text-primary-600 font-medium mt-3 text-lg">
+                📍 Located on the 2nd floor of Southridge Mall, next to Round1 arcade
+              </p>
               
               <div className="mt-4 space-y-2">
                 <Link 
