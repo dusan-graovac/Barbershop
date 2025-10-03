@@ -33,20 +33,20 @@ export default function AboutPage() {
                 </h2>
                 <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
                   <p>
-                    Founded in 2018, Millionaire Barbershop was born from a passion for exceptional grooming and timeless style. Our founder envisioned a space where traditional barbering techniques meet modern luxury and comfort.
+                    Opened in 2025, Millionaire Barbershop brings world-class grooming expertise to Greendale, Wisconsin. Building on our successful foundation from our original location in Dubai, we've expanded to serve the Wisconsin community with the same passion for exceptional service and timeless style.
                   </p>
                   <p>
-                    What started as a single chair operation has grown into the premier barbershop in the downtown district, known for our attention to detail, skilled craftsmen, and commitment to making every client feel like a million dollars.
+                    Our journey began in the vibrant city of Dubai, where we established our reputation for precision cuts, premium service, and an unwavering commitment to making every client feel like a million dollars. Now, we're excited to bring that same level of excellence to the American Midwest.
                   </p>
                   <p>
-                    We believe that a great haircut is more than just a service—it&apos;s an experience that boosts confidence and reflects personal style.
+                    We believe that a great haircut is more than just a service—it&apos;s an experience that boosts confidence and reflects personal style. Whether you're looking for a classic cut or modern styling, our skilled team delivers results that exceed expectations.
                   </p>
                 </div>
               </div>
               <div className="relative h-96 lg:h-[500px] bg-gray-100 rounded-2xl overflow-hidden">
                 <Image
-                  src="/images/hero-bg.svg"
-                  alt="Millionaire Barbershop interior"
+                  src="/images/team-photo.jpg"
+                  alt="Millionaire Barbershop team"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -118,10 +118,8 @@ export default function AboutPage() {
               Join our community of satisfied clients and discover what makes us special
             </p>
             <a
-              href={bookingUrl}
+              href="/book"
               className="btn-primary inline-block"
-              target="_blank"
-              rel="noopener noreferrer"
             >
               Book Your Visit
             </a>

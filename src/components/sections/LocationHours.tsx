@@ -64,10 +64,8 @@ export default function LocationHours({ bookingUrl = '#' }: LocationHoursProps) 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-6">
               <Link
-                href={bookingUrl}
+                href="/book"
                 className="bg-primary hover:bg-accent text-white font-semibold px-8 py-4 rounded-xl text-lg transition-colors duration-300 text-center focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
-                target="_blank"
-                rel="noopener noreferrer"
               >
                 Book Appointment
               </Link>

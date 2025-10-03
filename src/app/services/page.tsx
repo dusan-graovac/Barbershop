@@ -27,61 +27,61 @@ const services: Service[] = [
   {
     id: '1',
     category: 'Haircuts',
-    name: 'Signature Cut',
-    description: 'Precision haircut with consultation, wash, cut, style, and finish',
+    name: 'Men\'s Haircut & Beard',
+    description: 'Complete men\'s grooming service with precision haircut and beard styling',
     price: '$45',
-    duration: '45 min',
+    duration: '30 min',
     popular: true
   },
   {
     id: '2',
     category: 'Haircuts',
-    name: 'Classic Cut',
-    description: 'Traditional haircut with wash and basic styling',
-    price: '$35',
-    duration: '30 min'
+    name: 'Men\'s Haircut',
+    description: 'Professional men\'s haircut with consultation and styling',
+    price: '$25+',
+    duration: '15 min',
+    popular: true
   },
   {
     id: '3',
     category: 'Haircuts',
-    name: 'Buzz Cut',
-    description: 'Clean, uniform clipper cut with precision edging',
-    price: '$25',
-    duration: '20 min'
+    name: 'Women\'s Haircut',
+    description: 'Expert women\'s haircut with wash, cut, and styling',
+    price: '$40+',
+    duration: '30 min'
   },
   {
     id: '4',
     category: 'Haircuts',
-    name: 'Kids Cut (12 & under)',
+    name: 'Kid\'s Haircut (under 9)',
     description: 'Gentle haircut designed for children with patience and care',
-    price: '$30',
-    duration: '30 min'
+    price: '$20',
+    duration: '15 min'
   },
 
-  // Shaves
+  // Beard & Facial Services
   {
     id: '5',
-    category: 'Shaves',
-    name: 'Classic Shave',
-    description: 'Traditional hot towel shave with premium products and aftercare',
-    price: '$35',
-    duration: '30 min',
-    popular: true
+    category: 'Beard & Facial Services',
+    name: 'Beard Lineup',
+    description: 'Precision beard trimming and edge-up for a clean, sharp look',
+    price: '$20+',
+    duration: '15 min'
   },
   {
     id: '6',
-    category: 'Shaves',
-    name: 'Head Shave',
-    description: 'Complete scalp shave with hot towel treatment',
-    price: '$40',
-    duration: '35 min'
+    category: 'Beard & Facial Services',
+    name: 'Facial',
+    description: 'Complete facial treatment for healthy, refreshed skin',
+    price: '$120',
+    duration: '45 min'
   },
   {
     id: '7',
-    category: 'Shaves',
-    name: 'Beard Trim',
-    description: 'Precision beard trimming and shaping with hot towel finish',
-    price: '$25',
+    category: 'Beard & Facial Services',
+    name: 'Full Face Threading',
+    description: 'Professional threading for complete facial hair removal',
+    price: '$25+',
     duration: '20 min'
   },
 
@@ -89,65 +89,56 @@ const services: Service[] = [
   {
     id: '8',
     category: 'Styling & Grooming',
-    name: 'Full Service',
-    description: 'Complete package: cut, wash, shave, style, and premium grooming',
-    price: '$75',
-    duration: '90 min',
-    popular: true
+    name: 'Ears Waxing',
+    description: 'Professional ear hair removal with premium wax',
+    price: '$10+',
+    duration: '10 min'
   },
   {
     id: '9',
     category: 'Styling & Grooming',
-    name: 'Beard Grooming',
-    description: 'Complete beard care including wash, trim, oil, and styling',
-    price: '$40',
-    duration: '45 min'
+    name: 'Eyebrows Threading',
+    description: 'Precision eyebrow shaping with threading technique',
+    price: '$10+',
+    duration: '15 min'
   },
   {
     id: '10',
     category: 'Styling & Grooming',
-    name: 'Mustache Grooming',
-    description: 'Precision mustache trimming and wax styling',
-    price: '$15',
-    duration: '15 min'
+    name: 'Men\'s Hair Color',
+    description: 'Professional hair coloring service for men',
+    price: '$25+',
+    duration: '20 min'
   },
   {
     id: '11',
     category: 'Styling & Grooming',
-    name: 'Eyebrow Trim',
-    description: 'Professional eyebrow shaping and trimming',
-    price: '$20',
+    name: 'Men\'s Beard Color',
+    description: 'Expert beard coloring and tinting service',
+    price: '$20+',
     duration: '15 min'
   },
 
-  // Add-ons
+  // Premium Services
   {
     id: '12',
-    category: 'Add-ons',
-    name: 'Hot Towel Treatment',
-    description: 'Relaxing hot towel facial treatment',
-    price: '$10',
-    duration: '10 min'
+    category: 'Premium Services',
+    name: 'House Call',
+    description: 'Professional barbering service at your location',
+    price: '$100+',
+    duration: '1 hour'
   },
   {
     id: '13',
-    category: 'Add-ons',
-    name: 'Scalp Massage',
-    description: 'Therapeutic scalp massage with premium oils',
-    price: '$15',
-    duration: '15 min'
-  },
-  {
-    id: '14',
-    category: 'Add-ons',
-    name: 'Hair Wash & Style',
-    description: 'Premium wash with styling products and finish',
-    price: '$20',
-    duration: '20 min'
+    category: 'Premium Services',
+    name: 'VIP',
+    description: 'Ultimate luxury grooming experience with full-day service',
+    price: '$900+',
+    duration: '9 hours'
   }
 ];
 
-const categories = ['Haircuts', 'Shaves', 'Styling & Grooming', 'Add-ons'];
+const categories = ['Haircuts', 'Beard & Facial Services', 'Styling & Grooming', 'Premium Services'];
 
 export default function ServicesPage() {
   const bookingUrl = process.env.NEXT_PUBLIC_THECUT_BOOKING_URL || '#';
@@ -167,10 +158,8 @@ export default function ServicesPage() {
               Professional barbering services with transparent pricing. Quality you can trust, results you&apos;ll love.
             </p>
             <Link
-              href={bookingUrl}
+              href="/book"
               className="bg-primary hover:bg-accent text-white font-semibold px-8 py-4 rounded-lg text-lg transition-colors duration-300 inline-block focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-black"
-              target="_blank"
-              rel="noopener noreferrer"
             >
               Book Your Appointment
             </Link>
@@ -223,10 +212,8 @@ export default function ServicesPage() {
                               {service.price}
                             </div>
                             <Link
-                              href={bookingUrl}
+                              href={`/book?service=${encodeURIComponent(service.name.toLowerCase().replace(/[^a-z0-9]+/g, '-'))}`}
                               className="bg-black hover:bg-primary text-white font-semibold px-4 py-2 rounded-lg text-sm transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 inline-block"
-                              target="_blank"
-                              rel="noopener noreferrer"
                             >
                               Book Now
                             </Link>
@@ -238,57 +225,6 @@ export default function ServicesPage() {
                 </div>
               );
             })}
-          </div>
-        </section>
-
-        {/* Policies Section */}
-        <section className="py-16 bg-gray-50">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="font-display text-3xl text-black text-center mb-12">
-              Service Policies
-            </h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-white p-6 rounded-lg shadow-sm">
-                <h3 className="font-semibold text-lg text-black mb-3">Booking & Cancellation</h3>
-                <ul className="text-gray-600 space-y-2 text-sm">
-                  <li>• 24-hour cancellation notice required</li>
-                  <li>• Late arrivals may result in shortened service</li>
-                  <li>• No-show fee: 50% of service price</li>
-                  <li>• Appointments can be rescheduled once without penalty</li>
-                </ul>
-              </div>
-              
-              <div className="bg-white p-6 rounded-lg shadow-sm">
-                <h3 className="font-semibold text-lg text-black mb-3">Payment & Gratuity</h3>
-                <ul className="text-gray-600 space-y-2 text-sm">
-                  <li>• Cash, card, and digital payments accepted</li>
-                  <li>• Gratuity is appreciated but not required</li>
-                  <li>• Package deals available for multiple services</li>
-                  <li>• Senior and student discounts available</li>
-                </ul>
-              </div>
-              
-              <div className="bg-white p-6 rounded-lg shadow-sm">
-                <h3 className="font-semibold text-lg text-black mb-3">Health & Safety</h3>
-                <ul className="text-gray-600 space-y-2 text-sm">
-                  <li>• All tools sanitized between clients</li>
-                  <li>• Fresh towels and capes for each service</li>
-                  <li>• Please inform us of any allergies</li>
-                  <li>• Clean, professional environment guaranteed</li>
-                </ul>
-              </div>
-              
-              <div className="bg-white p-6 rounded-lg shadow-sm">
-                <h3 className="font-semibold text-lg text-black mb-3">Satisfaction Guarantee</h3>
-                <ul className="text-gray-600 space-y-2 text-sm">
-                  <li>• Touch-ups within 7 days at no charge</li>
-                  <li>• Open communication encouraged</li>
-                  <li>• Your satisfaction is our priority</li>
-                  <li>• Experienced professionals only</li>
-                </ul>
-              </div>
-            </div>
           </div>
         </section>
 
@@ -304,10 +240,8 @@ export default function ServicesPage() {
             
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
               <Link
-                href={bookingUrl}
+                href="/book"
                 className="bg-primary hover:bg-accent text-white font-semibold px-8 py-4 rounded-lg text-lg transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-black"
-                target="_blank"
-                rel="noopener noreferrer"
               >
                 Book Online Now
               </Link>

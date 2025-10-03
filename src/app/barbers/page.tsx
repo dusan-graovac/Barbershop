@@ -1,6 +1,7 @@
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function BarbersPage() {
   const bookingUrl = process.env.NEXT_PUBLIC_THECUT_BOOKING_URL || '#';
@@ -9,30 +10,33 @@ export default function BarbersPage() {
   const barbers = [
     {
       id: '1',
-      name: 'Marcus Thompson',
-      specialty: 'Classic Cuts & Fades',
-      experience: '8 years experience',
-      image: '/images/barber-marcus.svg',
-      bio: 'Marcus specializes in precision cuts with a modern twist on classic styles. His attention to detail and friendly demeanor make every visit a premium experience.',
-      certifications: ['Master Barber Licensed', 'Hot Towel Specialist']
+      name: 'Adam',
+      specialty: 'Master Barber',
+      experience: '22 years experience',
+      image: '/images/adam_portrait.jpg',
+      bio: 'Two decades of perfecting the art of barbering with unmatched expertise. Adam brings precision, skill, and passion to every cut.',
+      certifications: ['Master Barber Licensed', 'Precision Cut Specialist'],
+      bookingUrl: '/book?barber=adam'
     },
     {
       id: '2',
-      name: 'David Rodriguez',
-      specialty: 'Modern Styling & Shaves',
+      name: 'Alex',
+      specialty: 'Professional Barber',
       experience: '6 years experience',
-      image: '/images/barber-david.svg',
-      bio: 'David is an expert in contemporary cuts and traditional wet shaving techniques. He stays current with the latest trends while respecting classic barbering traditions.',
-      certifications: ['Licensed Barber', 'Straight Razor Certified']
+      image: '/images/alex-portrait.jpg',
+      bio: 'Dedicated to delivering exceptional service and precision styling. Alex combines modern techniques with classic barbering traditions.',
+      certifications: ['Licensed Professional Barber', 'Modern Styling Certified'],
+      bookingUrl: '/book?barber=alex'
     },
     {
       id: '3',
-      name: 'Alex Johnson',
-      specialty: 'Beard Grooming & Design',
-      experience: '10 years experience',
-      image: '/images/barber-alex.svg',
-      bio: 'Alex is a master of beard styling, grooming, and facial hair design. With a decade of experience, he can transform any beard into a work of art.',
-      certifications: ['Master Barber Licensed', 'Beard Specialist Certified']
+      name: 'Moe',
+      specialty: 'Professional Barber',
+      experience: '2 years experience',
+      image: '/images/moe-portrait.jpg',
+      bio: 'Bringing fresh energy and modern techniques to every cut. Moe is passionate about creating sharp, contemporary looks.',
+      certifications: ['Licensed Professional Barber', 'Contemporary Cuts Specialist'],
+      bookingUrl: '/book?barber=moe'
     }
   ];
 
@@ -69,6 +73,7 @@ export default function BarbersPage() {
                       alt={`${barber.name} - Professional Barber`}
                       fill
                       className="object-cover"
+                      style={{ objectPosition: 'center 65%' }}
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                     
@@ -106,14 +111,12 @@ export default function BarbersPage() {
                     </div>
 
                     {/* Book Button */}
-                    <a
-                      href={bookingUrl}
+                    <Link
+                      href={barber.bookingUrl || bookingUrl}
                       className="btn-primary w-full text-center"
-                      target="_blank"
-                      rel="noopener noreferrer"
                     >
                       Book with {barber.name.split(' ')[0]}
-                    </a>
+                    </Link>
                   </div>
                 </div>
               ))}

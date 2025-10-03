@@ -16,25 +16,25 @@ interface ServicesPreviewProps {
 const featuredServices: Service[] = [
   {
     id: '1',
-    name: 'Signature Cut',
-    description: 'Precision haircut with consultation, wash, cut, style, and finish. Includes hot towel treatment.',
+    name: 'Men\'s Haircut & Beard',
+    description: 'Complete men\'s grooming service with precision haircut and beard styling.',
     price: '$45',
-    duration: '45 min',
+    duration: '30 min',
     popular: true
   },
   {
     id: '2',
-    name: 'Classic Shave',
-    description: 'Traditional hot towel shave with premium products, facial massage, and aftercare treatment.',
-    price: '$35',
-    duration: '30 min'
+    name: 'Men\'s Haircut',
+    description: 'Professional men\'s haircut with consultation and styling.',
+    price: '$25+',
+    duration: '15 min'
   },
   {
     id: '3',
-    name: 'Full Service',
-    description: 'Complete grooming package including cut, wash, beard trim, shave, and premium styling.',
-    price: '$75',
-    duration: '90 min'
+    name: 'Kid\'s Haircut (under 9)',
+    description: 'Gentle haircut designed for children with patience and care.',
+    price: '$20',
+    duration: '15 min'
   },
 ];
 
@@ -99,15 +99,13 @@ export default function ServicesPreview({ bookingUrl = '#' }: ServicesPreviewPro
 
               {/* Book Button */}
               <Link
-                href={bookingUrl}
+                href={`/book?service=${encodeURIComponent(service.name.toLowerCase().replace(/[^a-z0-9]+/g, '-'))}`}
                 className={`inline-flex items-center justify-center w-full font-semibold py-4 px-6 rounded-xl text-lg min-h-16 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-offset-2 ${
                   service.popular
                     ? 'bg-primary-500 hover:bg-primary-600 focus:bg-primary-600 text-white focus:ring-primary-300 shadow-medium hover:shadow-gold'
                     : 'bg-gray-900 hover:bg-primary-600 focus:bg-primary-600 text-white focus:ring-primary-300 shadow-medium hover:shadow-gold'
                 }`}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`Book ${service.name} service (opens in new tab)`}
+                aria-label={`Book ${service.name} service`}
               >
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />

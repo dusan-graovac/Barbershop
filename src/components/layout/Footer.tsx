@@ -83,10 +83,8 @@ export default function Footer({ bookingUrl = '#', bookingQRCode: _bookingQRCode
             {/* Book Now Button */}
             <div>
               <Link
-                href={bookingUrl}
+                href="/book"
                 className="inline-block bg-primary hover:bg-accent text-white font-semibold px-6 py-3 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-black"
-                target="_blank"
-                rel="noopener noreferrer"
               >
                 Book Appointment
               </Link>
@@ -143,18 +141,10 @@ export default function Footer({ bookingUrl = '#', bookingQRCode: _bookingQRCode
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-800 mt-16 lg:mt-20 pt-10 flex flex-col md:flex-row justify-between items-center">
+        <div className="border-t border-gray-800 mt-16 lg:mt-20 pt-10 text-center">
           <p className="text-gray-400 text-sm">
             © {currentYear} Millionaire Barbershop. All rights reserved.
           </p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link href="/privacy" className="text-gray-400 hover:text-primary text-sm transition-colors duration-200">
-              Privacy Policy
-            </Link>
-            <Link href="/terms" className="text-gray-400 hover:text-primary text-sm transition-colors duration-200">
-              Terms of Service
-            </Link>
-          </div>
         </div>
       </div>
     </footer>

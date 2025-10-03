@@ -6,20 +6,17 @@ export default function GalleryPage() {
   const bookingUrl = process.env.NEXT_PUBLIC_THECUT_BOOKING_URL || '#';
   const bookingQRCode = process.env.NEXT_PUBLIC_THECUT_QR_CODE;
 
-  // Placeholder gallery items
+  // Gallery images
   const galleryItems = [
-    { id: 1, title: 'Classic Fade', category: 'Haircuts', image: '/images/hero-bg.svg' },
-    { id: 2, title: 'Beard Trim', category: 'Grooming', image: '/images/hero-bg.svg' },
-    { id: 3, title: 'Traditional Shave', category: 'Shaves', image: '/images/hero-bg.svg' },
-    { id: 4, title: 'Modern Style', category: 'Haircuts', image: '/images/hero-bg.svg' },
-    { id: 5, title: 'Mustache Grooming', category: 'Grooming', image: '/images/hero-bg.svg' },
-    { id: 6, title: 'Hot Towel Service', category: 'Shaves', image: '/images/hero-bg.svg' },
-    { id: 7, title: 'Kids Cut', category: 'Haircuts', image: '/images/hero-bg.svg' },
-    { id: 8, title: 'Beard Design', category: 'Grooming', image: '/images/hero-bg.svg' },
-    { id: 9, title: 'Vintage Style', category: 'Haircuts', image: '/images/hero-bg.svg' }
+    { id: 1, image: '/images/DSC07068.jpg' },
+    { id: 2, image: '/images/DSC07047.jpg' },
+    { id: 3, image: '/images/DSC07053.jpg' },
+    { id: 4, image: '/images/DSC07175.jpg' },
+    { id: 5, image: '/images/DSC07167.jpg' },
+    { id: 6, image: '/images/DSC07170.jpg' },
+    { id: 7, image: '/images/DSC07076.jpg' },
+    { id: 8, image: '/images/DSC07059.jpg' }
   ];
-
-  const categories = ['All', 'Haircuts', 'Shaves', 'Grooming'];
 
   return (
     <>
@@ -38,48 +35,27 @@ export default function GalleryPage() {
           </div>
         </section>
 
-        {/* Filter Tabs */}
-        <section className="py-8 bg-white border-b border-gray-200">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-wrap justify-center gap-4">
-              {categories.map((category) => (
-                <button
-                  key={category}
-                  className="px-6 py-2 rounded-full border border-gray-300 text-gray-700 hover:border-primary-500 hover:text-primary-600 transition-colors duration-200"
-                >
-                  {category}
-                </button>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* Gallery Grid */}
         <section className="py-16 lg:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {galleryItems.map((item) => (
-                <div 
+                <div
                   key={item.id}
                   className="group relative bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
                 >
                   <div className="relative h-80 bg-gray-100">
                     <Image
                       src={item.image}
-                      alt={item.title}
+                      alt="Barbershop gallery image"
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-300"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
-                    
-                    {/* Overlay */}
-                    <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-end">
-                      <div className="p-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span className="inline-block bg-primary-500 text-xs font-semibold px-2 py-1 rounded-full mb-2">
-                          {item.category}
-                        </span>
-                        <h3 className="text-lg font-semibold">{item.title}</h3>
-                      </div>
+
+                    {/* Simple hover overlay */}
+                    <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300">
                     </div>
                   </div>
                 </div>

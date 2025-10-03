@@ -14,38 +14,73 @@ interface Review {
 const reviews: Review[] = [
   {
     id: '1',
-    name: 'James Wilson',
+    name: 'Murad Abdel',
     rating: 5,
-    comment: 'Exceptional service and attention to detail. Marcus gave me the best haircut I\'ve had in years. The attention to detail and professional atmosphere make this place stand out.',
+    comment: 'Adam was excellent. He has great skill. He was very friendly. His attention to detail, and his ability to understand my needs made this the best haircut experience I\'ve had.',
     service: 'Signature Cut'
   },
   {
     id: '2',
-    name: 'Michael Davis',
+    name: 'Dimitrios Massie',
     rating: 5,
-    comment: 'The hot towel shave was incredible. David took his time and made sure everything was perfect. Highly recommend for anyone looking for a premium barbershop experience.',
-    service: 'Classic Shave'
+    comment: 'Adam and Alex and Mo are incredible barbers! Not only do they give amazing, sharp haircuts every time, but they also provide exceptional customer service.',
+    service: 'Premium Cut'
   },
   {
     id: '3',
-    name: 'Robert Brown',
+    name: 'Vincent Markwiese',
     rating: 5,
-    comment: 'Professional atmosphere and skilled barbers. Alex transformed my beard completely. Worth every penny and I\'ll definitely be returning as a regular customer.',
-    service: 'Beard Grooming'
+    comment: 'Had the best fade and beard line up of my life. Overall amazing experience and well taken care of. The place looks amazing and exceeded my expectations!',
+    service: 'Fade & Beard'
   },
   {
     id: '4',
-    name: 'Chris Taylor',
+    name: 'Daniel Garcia',
     rating: 5,
-    comment: 'Clean facility, friendly staff, and excellent results. This place sets the standard for premium barbershops. The full service package exceeded my expectations.',
+    comment: 'I was introduced to Adam a few months back, haven\'t gone to another barber since! It\'s like a spa day for men. Always a perfect haircut and amazing treatment!',
     service: 'Full Service'
   },
   {
     id: '5',
-    name: 'Mark Johnson',
+    name: 'Carlos Ortega',
     rating: 5,
-    comment: 'Been coming here for months and it\'s always consistent quality. Great atmosphere and skilled professionals who really know their craft.',
+    comment: 'Great experience and great barbershop. Not only did I get a good looking haircut, it also came with a comfortable experience. Adam always provides consistent service that I appreciate!',
     service: 'Signature Cut'
+  },
+  {
+    id: '6',
+    name: 'Aleksandra Devic',
+    rating: 5,
+    comment: 'Millionaire Barber Shop is hands down the best in town! We\'ve been coming to Adam since my firstborn turned one, and he always delivers exceptional results.',
+    service: 'Family Cuts'
+  },
+  {
+    id: '7',
+    name: 'Cee Breeze',
+    rating: 5,
+    comment: 'Adam was just FANTASTIC with knowing precisely what and how to scissor cut the top of my hair in order to shape it perfectly. True professional craftsmanship.',
+    service: 'Scissor Cut'
+  },
+  {
+    id: '8',
+    name: 'Mario Zapata',
+    rating: 5,
+    comment: 'Everytime I get my cut by Adam I feel like a new man! Or may I even say like a Millionaire!? He takes his time, does a great job, and the atmosphere is perfect.',
+    service: 'Signature Cut'
+  },
+  {
+    id: '9',
+    name: 'Dragisa Simic',
+    rating: 5,
+    comment: 'Adam and Alex are killing it!! I\'ve been with these guys for about 7 years. The only barbershop I trust with my beard. Highly recommend!',
+    service: 'Beard Grooming'
+  },
+  {
+    id: '10',
+    name: 'Jon Rutter',
+    rating: 5,
+    comment: 'Best barbers shop and barbers around. Never disappoint. Never fail. Never late. Always putting the customer first. Exceptional service every time.',
+    service: 'Premium Service'
   }
 ];
 

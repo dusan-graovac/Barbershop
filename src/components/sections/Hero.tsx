@@ -18,17 +18,20 @@ export default function Hero({ bookingUrl = '#' }: HeroProps) {
         Skip to main content
       </a>
 
-      {/* Background Image */}
+      {/* Background Video */}
       <div className="absolute inset-0 z-0">
         <div className="relative w-full h-full">
-          <Image
-            src="/images/hero-bg.svg"
-            alt=""
-            fill
-            className="object-cover opacity-30"
-            priority
-            sizes="100vw"
-          />
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-cover opacity-30"
+            poster="/images/hero-bg.svg"
+          >
+            <source src="https://res.cloudinary.com/dythde97l/video/upload/f_mp4/v1759426532/barbershopvideo_cbw9ws.mov" type="video/mp4" />
+            <source src="https://res.cloudinary.com/dythde97l/video/upload/f_webm/v1759426532/barbershopvideo_cbw9ws.mov" type="video/webm" />
+          </video>
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/40" />
         </div>
       </div>
@@ -46,11 +49,9 @@ export default function Hero({ bookingUrl = '#' }: HeroProps) {
 
           <div className="hero-buttons">
             <Link
-              href={bookingUrl}
+              href="/book"
               className="btn-primary"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Book an appointment (opens in new tab)"
+              aria-label="Book an appointment"
             >
               <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />

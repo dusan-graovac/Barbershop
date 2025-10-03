@@ -8,6 +8,7 @@ interface Barber {
   experience: string;
   image: string;
   bio: string;
+  bookingUrl?: string;
 }
 
 interface BarbersPreviewProps {
@@ -18,26 +19,29 @@ const featuredBarbers: Barber[] = [
   {
     id: '1',
     name: 'Adam',
-    specialty: 'Classic Cuts & Fades',
-    experience: '8 years experience',
-    image: '/images/barber-adam.svg',
-    bio: 'Specializing in precision cuts with a modern twist on classic styles.'
+    specialty: 'Master Barber',
+    experience: '22 years experience',
+    image: '/images/adam_portrait.jpg',
+    bio: 'Two decades of perfecting the art of barbering with unmatched expertise.',
+    bookingUrl: '/book?barber=adam'
   },
   {
     id: '2',
     name: 'Moe',
-    specialty: 'Modern Styling & Shaves',
-    experience: '6 years experience',
-    image: '/images/barber-moe.svg',
-    bio: 'Expert in contemporary cuts and traditional wet shaving techniques.'
+    specialty: 'Professional Barber',
+    experience: '2 years experience',
+    image: '/images/moe-portrait.jpg',
+    bio: 'Bringing fresh energy and modern techniques to every cut.',
+    bookingUrl: '/book?barber=moe'
   },
   {
     id: '3',
     name: 'Alex',
-    specialty: 'Beard Grooming & Design',
-    experience: '10 years experience',
-    image: '/images/barber-alex.svg',
-    bio: 'Master of beard styling, grooming, and facial hair design.'
+    specialty: 'Professional Barber',
+    experience: '6 years experience',
+    image: '/images/alex-portrait.jpg',
+    bio: 'Dedicated to delivering exceptional service and precision styling.',
+    bookingUrl: '/book?barber=alex'
   },
 ];
 
@@ -70,6 +74,7 @@ export default function BarbersPreview({ bookingUrl = '#' }: BarbersPreviewProps
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  style={{ objectPosition: 'center 65%' }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 
@@ -93,11 +98,9 @@ export default function BarbersPreview({ bookingUrl = '#' }: BarbersPreviewProps
 
                 {/* Book Button */}
                 <Link
-                  href={bookingUrl}
+                  href={barber.bookingUrl || bookingUrl}
                   className="inline-flex items-center justify-center w-full bg-gray-900 hover:bg-primary-600 focus:bg-primary-600 text-white font-semibold py-4 px-6 rounded-xl text-lg min-h-16 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-primary-300 focus:ring-offset-2 shadow-medium hover:shadow-gold"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`Book with ${barber.name} (opens in new tab)`}
+                  aria-label={`Book with ${barber.name}`}
                 >
                   <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
