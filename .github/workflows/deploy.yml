@@ -34,7 +34,7 @@ jobs:
       - name: Build with Next.js
         run: |
           echo "Building with Next.js..."
-          GITHUB_PAGES=true npm run build
+          npm run build
           
       - name: Verify build output
         run: |
