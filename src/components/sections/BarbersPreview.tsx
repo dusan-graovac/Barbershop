@@ -76,8 +76,8 @@ export default function BarbersPreview({ bookingUrl = '#' }: BarbersPreviewProps
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   style={{
                     objectPosition: barber.name === 'Adam' ? 'center 45%' :
-                                   barber.name === 'Alex' ? 'center 40%' :
-                                   barber.name === 'Moe' ? 'center 50%' :
+                                   barber.name === 'Alex' ? 'center 30%' :
+                                   barber.name === 'Moe' ? 'center 35%' :
                                    'center 65%'
                   }}
                 />

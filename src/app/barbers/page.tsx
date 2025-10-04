@@ -75,8 +75,8 @@ export default function BarbersPage() {
                       className="object-cover"
                       style={{
                         objectPosition: barber.name === 'Adam' ? 'center 45%' :
-                                       barber.name === 'Alex' ? 'center 40%' :
-                                       barber.name === 'Moe' ? 'center 50%' :
+                                       barber.name === 'Alex' ? 'center 30%' :
+                                       barber.name === 'Moe' ? 'center 35%' :
                                        'center 65%'
                       }}
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
