@@ -13,7 +13,7 @@ export default function BarbersPage() {
       name: 'Adam',
       specialty: 'Master Barber',
       experience: '22 years experience',
-      image: '/images/adam_portrait.jpg',
+      image: '/images/adam_portrait2.jpg',
       bio: 'Two decades of perfecting the art of barbering with unmatched expertise. Adam brings precision, skill, and passion to every cut.',
       certifications: ['Master Barber Licensed', 'Precision Cut Specialist'],
       bookingUrl: '/book?barber=adam'
@@ -23,7 +23,7 @@ export default function BarbersPage() {
       name: 'Alex',
       specialty: 'Professional Barber',
       experience: '6 years experience',
-      image: '/images/alex-portrait.jpg',
+      image: '/images/alex_portrait2.jpg',
       bio: 'Dedicated to delivering exceptional service and precision styling. Alex combines modern techniques with classic barbering traditions.',
       certifications: ['Licensed Professional Barber', 'Modern Styling Certified'],
       bookingUrl: '/book?barber=alex'
@@ -33,7 +33,7 @@ export default function BarbersPage() {
       name: 'Moe',
       specialty: 'Professional Barber',
       experience: '2 years experience',
-      image: '/images/moe-portrait.jpg',
+      image: '/images/mor_portrait2.jpg',
       bio: 'Bringing fresh energy and modern techniques to every cut. Moe is passionate about creating sharp, contemporary looks.',
       certifications: ['Licensed Professional Barber', 'Contemporary Cuts Specialist'],
       bookingUrl: '/book?barber=moe'
@@ -73,7 +73,12 @@ export default function BarbersPage() {
                       alt={`${barber.name} - Professional Barber`}
                       fill
                       className="object-cover"
-                      style={{ objectPosition: 'center 65%' }}
+                      style={{
+                        objectPosition: barber.name === 'Adam' ? 'center 45%' :
+                                       barber.name === 'Alex' ? 'center 40%' :
+                                       barber.name === 'Moe' ? 'center 50%' :
+                                       'center 65%'
+                      }}
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                     

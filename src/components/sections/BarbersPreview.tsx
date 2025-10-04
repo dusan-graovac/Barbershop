@@ -21,7 +21,7 @@ const featuredBarbers: Barber[] = [
     name: 'Adam',
     specialty: 'Master Barber',
     experience: '22 years experience',
-    image: '/images/adam_portrait.jpg',
+    image: '/images/adam_portrait2.jpg',
     bio: 'Two decades of perfecting the art of barbering with unmatched expertise.',
     bookingUrl: '/book?barber=adam'
   },
@@ -30,7 +30,7 @@ const featuredBarbers: Barber[] = [
     name: 'Moe',
     specialty: 'Professional Barber',
     experience: '2 years experience',
-    image: '/images/moe-portrait.jpg',
+    image: '/images/mor_portrait2.jpg',
     bio: 'Bringing fresh energy and modern techniques to every cut.',
     bookingUrl: '/book?barber=moe'
   },
@@ -39,7 +39,7 @@ const featuredBarbers: Barber[] = [
     name: 'Alex',
     specialty: 'Professional Barber',
     experience: '6 years experience',
-    image: '/images/alex-portrait.jpg',
+    image: '/images/alex_portrait2.jpg',
     bio: 'Dedicated to delivering exceptional service and precision styling.',
     bookingUrl: '/book?barber=alex'
   },
@@ -74,7 +74,12 @@ export default function BarbersPreview({ bookingUrl = '#' }: BarbersPreviewProps
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  style={{ objectPosition: 'center 65%' }}
+                  style={{
+                    objectPosition: barber.name === 'Adam' ? 'center 45%' :
+                                   barber.name === 'Alex' ? 'center 40%' :
+                                   barber.name === 'Moe' ? 'center 50%' :
+                                   'center 65%'
+                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 
